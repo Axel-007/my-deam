@@ -5,7 +5,9 @@
         "device": "*",
         "animation": "*",
         "storyboard": "*",
-        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1"
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1",
+        "sevenseg": "*",
+        "Johnny": "github:axel-007/johnny#master"
     },
     "files": [
         "main.blocks",
