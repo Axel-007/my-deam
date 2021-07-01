@@ -5,9 +5,7 @@
         "device": "*",
         "animation": "*",
         "storyboard": "*",
-        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1",
-        "sevenseg": "*",
-        "Johnny": "github:axel-007/johnny#master"
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1"
     },
     "files": [
         "main.blocks",
@@ -15,11 +13,10 @@
         "README.md",
         "assets.json",
         "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.ts",
+        "main.py"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "testFiles": [],
     "targetVersions": {
         "target": "1.4.45",
         "targetId": "arcade"

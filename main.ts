@@ -5,6 +5,8 @@ namespace SpriteKind {
     export const Door = SpriteKind.create()
     export const Open_door = SpriteKind.create()
     export const sfumatura = SpriteKind.create()
+    export const jhonny_in_van = SpriteKind.create()
+    export const Van = SpriteKind.create()
 }
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -84,12 +86,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.B_Story, function (sprite, otherSprite) {
     controller.moveSprite(Johnny, 0, 0)
-    gate.destroy()
+    gate2.destroy()
     story.printText("the gate is open", 658, 375, 1, 15, story.TextSpeed.Normal)
     controller.moveSprite(Johnny, 40, 40)
-})
-controller.combos.attachCombo("A+A+A", function () {
-    game.over(true)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -168,182 +167,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSprite) {
-    animation.runImageAnimation(
-    Door,
-    [img`
-        ffffffffffffffff
-        feeeeeeeeeeeeeef
-        feffffffffffffef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeffffeeefef
-        fefeef6666feefef
-        fefef666666fefef
-        fefef666666fefef
-        fefef666666fefef
-        fefef666666fefef
-        fefeffffffffefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        feffffffffffffef
-        feeeeeeeeeeeeeef
-        feeeeeeeeeee5def
-        feeeeeeeeeee55ef
-        feeeeeeeeeeeeeef
-        feffffffffffffef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        feffffffffffffef
-        feeeeeeeeeeeeeef
-        ffffffffffffffff
-        `,img`
-        ffffffffffffffff
-        feeefefeffffffff
-        feefeefeffffffff
-        fefefffeffffffff
-        feff66feffffffff
-        fef666feffffffff
-        fef66ffeffffffff
-        fef6fefeffffffff
-        feffefeeffffffff
-        fefefeeeffffffff
-        feffeeeeffffffff
-        feeeeeeeffffffff
-        feeeee4effffffff
-        feeee55effffffff
-        feeeee5effffffff
-        feeeeeeeffffffff
-        feeeeeeeffffffff
-        feeeeffeffffffff
-        feeefefeffffffff
-        feefeefeffffffff
-        fefeeefeffffffff
-        fefeeefeffffffff
-        fefeeefeffffffff
-        fefeeefeffffffff
-        fefeeefeffffffff
-        fefeeefeffffffff
-        fefeefeefeeeeeee
-        fefefeefffffffff
-        feffeefeeefeeeee
-        fefeefffffffffff
-        feeeffeeeeeeeeee
-        ffffffffffffffff
-        `,img`
-        ffffffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feffffffffffffff
-        ff6fffffffffffff
-        ff6fffffffffffff
-        ff6fffffffffffff
-        ff6fffffffffffff
-        feffffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        fee5ffffffffffff
-        fee5ffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feefffffffffffff
-        feffeeeefeeeeeee
-        feffffffffffffff
-        ffeeeeeeeefeeeee
-        ffffffffffffffff
-        feeeefeeeeeeeeee
-        ffffffffffffffff
-        `,img`
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        efffffffffffffff
-        eeeeeeeefeeeeeee
-        efffffffffffffff
-        eeeeeeeeeefeeeee
-        efffffffffffffff
-        eeeeefeeeeeeeeee
-        efffffffffffffff
-        `],
-    100,
-    false
-    )
-    Door.destroy()
-    open_door = sprites.create(img`
-        ffffffffffffffff
-        feeeeeeeeeeeeeef
-        feffffffffffffef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeffffeeefef
-        fefeef6666feefef
-        fefef666666fefef
-        fefef666666fefef
-        fefef666666fefef
-        fefef666666fefef
-        fefeffffffffefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        feffffffffffffef
-        feeeeeeeeeeeeeef
-        feeeeeeeeeee5def
-        feeeeeeeeeee55ef
-        feeeeeeeeeeeeeef
-        feffffffffffffef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        fefeeeeeeeeeefef
-        feffffffffffffef
-        feeeeeeeeeeeeeef
-        ffffffffffffffff
-        `, SpriteKind.Open_door)
-    open_door.setPosition(648, 208)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Open_door, function (sprite, otherSprite) {
     sfuma = sprites.create(img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -838,11 +661,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Open_door, function (sprite, oth
     false
     )
     pause(1500)
-    Car.destroy()
-    Door.destroy()
-    gate.destroy()
+    Car2.destroy()
+    Door2.destroy()
+    gate2.destroy()
     sfuma.destroy()
-    open_door.destroy()
     Johnny.destroy()
     tiles.setTilemap(tilemap`level2`)
     Johnny = sprites.create(img`
@@ -1096,7 +918,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Open_door, function (sprite, oth
     false
     )
     pause(4000)
-    Il_propietario.follow(Johnny, 400)
+    Il_propietario.follow(Johnny, 200)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -1247,6 +1069,158 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . f f . . f f . . . . 
         `],
     250,
+    true
+    )
+})
+controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    jhonny_in_van,
+    [img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        9 . . f f f f f c f f . . . 
+        . . f f c f f f c f f f 9 . 
+        . . f c c f f f f c f 9 . . 
+        . . f 9 f f e e f f c f . . 
+        . . f f 9 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . 9 
+        . . f f c f f f c f f f 9 . 
+        . . 9 c c f f f f c f f . . 
+        . . f 9 f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . 5 5 5 4 4 4 . . . . . 
+        . e 4 b 2 2 5 5 5 4 e . . . 
+        . 4 d 5 5 2 2 2 2 d 4 . . . 
+        . 4 4 f f 5 5 5 5 4 4 . . . 
+        . . . f f e e f f . . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . 9 
+        . 9 f f c f f f c f f f . . 
+        . . 9 c c f f f f c f f . . 
+        . . f f f f e e f f 9 f . . 
+        . . f f f 4 4 e e 9 f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . 9 f f c f f f c f f f . . 
+        . . 9 c c f f f f c f 9 . . 
+        . . f f f f e e f f 9 f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . . 5 5 5 4 4 4 . . . 
+        . . . e 4 b 2 2 5 5 5 4 e . 
+        . . . 4 d 5 5 2 2 2 2 d 4 . 
+        . . . 4 4 f f 5 5 5 5 4 4 . 
+        . . . . . f f e e f f . . . 
+        . . . . . . . . . . . . . . 
+        `],
+    200,
+    true
+    )
+})
+controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    jhonny_in_van,
+    [img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        9 . . f f f f f c f f . . . 
+        . . f f c f f f c f f f 9 . 
+        . . f c c f f f f c f 9 . . 
+        . . f 9 f f e e f f c f . . 
+        . . f f 9 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . 9 
+        . . f f c f f f c f f f 9 . 
+        . . 9 c c f f f f c f f . . 
+        . . f 9 f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . 5 5 5 4 4 4 . . . . . 
+        . e 4 b 2 2 5 5 5 4 e . . . 
+        . 4 d 5 5 2 2 2 2 d 4 . . . 
+        . 4 4 f f 5 5 5 5 4 4 . . . 
+        . . . f f e e f f . . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . 9 
+        . 9 f f c f f f c f f f . . 
+        . . 9 c c f f f f c f f . . 
+        . . f f f f e e f f 9 f . . 
+        . . f f f 4 4 e e 9 f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . 9 f f c f f f c f f f . . 
+        . . 9 c c f f f f c f 9 . . 
+        . . f f f f e e f f 9 f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . . 5 5 5 4 4 4 . . . 
+        . . . e 4 b 2 2 5 5 5 4 e . 
+        . . . 4 d 5 5 2 2 2 2 d 4 . 
+        . . . 4 4 f f 5 5 5 5 4 4 . 
+        . . . . . f f e e f f . . . 
+        . . . . . . . . . . . . . . 
+        `],
+    200,
     true
     )
 })
@@ -2832,21 +2806,153 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     500,
     false
     )
+    pause(7000)
+    Il_propietario.destroy()
+    Johnny.destroy(effects.trail, 1000)
+    tiles.setTilemap(tilemap`level5`)
+    scene.setBackgroundColor(11)
+    Van.setFlag(SpriteFlag.Ghost, false)
+    jhonny_in_van.setPosition(96, 56)
+    controller.player1.moveSprite(jhonny_in_van, 0, 5)
 })
 let Il_propietario: Sprite = null
 let sfuma: Sprite = null
-let open_door: Sprite = null
-let gate: Sprite = null
+let gate2: Sprite = null
 let Johnny: Sprite = null
-let Car: Sprite = null
-let Door: Sprite = null
+let jhonny_in_van: Sprite = null
+let Car2: Sprite = null
+let Door2: Sprite = null
+let Van: Sprite = null
 music.setVolume(8)
 story.startCutscene(function () {
     for (let index = 0; index < 10; index++) {
         music.playMelody("C D C D C D C D ", 600)
     }
 })
-Door = sprites.create(img`
+Van = sprites.create(img`
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1111111111111111111111111111fff1111111111fff111111111111fffffffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff11111111111fff11111111111111111111111111111111111111111fff11111111111111fffffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff11111111111111111111fff11111111111111111fff11111111111111fff111111111fff11111ffffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffffffffffffffff11111111111fff111111111cfffcccccccfffcccccccfffccccccccccccccfffcccccccccfff11111ffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffff1111111111111111fffccccccccccfffcccccccfffcccccccfffccccccccccccccfffcccccccccfffc11111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffffffff1111111111111111111fffccccccccccccccccccccfffccccccccccccccccccccccccccccccccccccccccc1111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffffff11111111111111111111fffcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffff111111111111111111111fffcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffffff1111111111111111111111fffccccccccccccccccccccccccccccc44444444ccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffffff111111111111111111111fff11cccccccccccccccccccccccccccc444444444444ccccccccccccccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffff1111111111111111111111fff11cccccccccccccccccccccccccc4444444444444444ccccccccccccccccccccccfff111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffffff11111111111111111111111fff11ccccccccccccccccccccccccc444444444444444444cccccccccccccccccccccfff111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffff11111111111111111111111111111cccccfffccccccccccccccccc4444bb224ffff44444cccccccccccccccccccccfff111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffffff1111111111111111111111111111fffccccfffccccccccccccccccc444bbbb2bfffff4444cccccccccccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffff111111111111111ffffffff111111fffccccfffccccc4eeeeeeeeeeeeeeeeee2eeeeeeeeeeeeeeeeeee4cccccccccccccc111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffffff1111111111111ffffffffffff11111fffccccccccccccc4ecccccccccccccccccccccccccccccccccce4ccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffff1111111111111fffffffffffff1111111cccccccccccccc4ecccccccccccccccccccccccccccccccccce4ccccccccccccccc111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffffffff111111111111fffffffffffffff1111111ccccccccccccccc4cccccccccccccccccccccccccccccccccc4cccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffff111111111111ffffffffffffffff1111111ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff1111111111111fffcccccccf9999ff1fff111fffcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    fffffffffffffffffffffffffffffff1111111111111fffcccccccccffffff1fff111fffcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    ffffffffffffffffffffffffffffff1111111111111fffcccccc99999999ff1fff111fffcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffffff
+    fffffffffffffffffffffffffffff1111111111111ffffcccccccccccfffff1111111cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfffc1111ffffffffffffffffffff
+    fffffffffffffffffffffffffff11111111111111fffffcccccccccccffff11111111cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfffc1111ffffffffffffffffffff
+    ffffffffffffffffffffffffff11111111111111ffffffcccccccccccffff11111111cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfffcc111ffffffffffffffffffff
+    fffffffffffffffffffffffff11111111111111ffff9999999cccccccffff11111111cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    ffffffffffffffffffffffff1111111111111ffbbfffffcccccccccccffff11111111ccfffccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    fffffffffffffffffffffff11111111111111fbffbffffcccccccccccffff11111111ccfffccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    ffffffffffffffffffffff111111111111111fbffbfffffcccccccccfffff11111111ccfffccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    fffffffffffffffffffff1111111111111111fbfcccccfffcccccccffffff11111111cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    ffffffffffffffffffff11111111111111111bbffcccccccccccccccfffff111fff11cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    fffffffffffffffffff111111111111111111bfbbffcccccccc9999999fff111fff11cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111ffffffffffffffffffff
+    ffffffffffffffffff1111111111111111111bffffffcccccccccccccfff1111fff11cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc1111fffffffffffffffffff
+    fffffffffffffffff1111111111111111111111fffffccccccccccccccf1111111111ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfff111fffffffffffffffffff
+    ffffffffffffffff11111111111111111111111111111111111111111111111111111cccfffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccfff111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111cccfffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccfff111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111cccfffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111fff111ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111fff111ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111fff111ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111fffccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfffc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111fffcccccccccccccccccccccccccccccccccccccccccccccfffccccccccccccccfffc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111fffcccccccccccccccccccccccccccccfffccccfffccccccfffccccccccccccccfffc111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111ccccccccccccccccccccccccccccccccfffccccfffcc1111fffccccccccccccccccc1111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111ccccccccccccccccccccccccccccccccfffcc11fff11111111111cccccccccfffccc1111fffffffffffffffffff
+    fffffffffffffff111111111111111111111111111111111111111111111111111111cccccccccccccccccccccccccccccccccccc111111111111111111ccccccccfffccc111ffffffffffffffffffff
+    fffffffffffffff11111111111111111111111111111111111111111111111111fff1cccccccccccccccccccccccccccccccccccc111111111111111111fffcccccfffccc111ffffffffffffffffffff
+    fffffffffffffff11111111111111111111111111ffffffffff11111111111111fff1ccccccccccccccccccccccccccccccccccc11111ffffffffff1111fffccccccccccc111ffffffffffffffffffff
+    fffffffffffffff1111111111111111111111111fffffffffffff111111111111fff1ccccccccccccccccccccccccccccccccccc1111fffffffffffff11fffccccccccccc111ffffffffffffffffffff
+    fffffffffffffff111111111111111111111111fffffffffffffff111111111111111cfffccccccccccccfffccccccfffcccccfff11fffffffffffffff1111ccccccccccc111ffffffffffffffffffff
+    fffffffffffffff111111111111111111111111fffffffffffffff111111111111111cfffccccccccccccfffccccccfffcccccfff11fffffffffffffff1111ccccccccccc111ffffffffffffffffffff
+    fffffffffffffff11111111111111111111111fffffffffffffffff11111111111111cfffccccccccccccfffccccccfffcccccfff1fffffffffffffffff111ccccccccccc111ffffffffffffffffffff
+    fffffffffffffff11111111111111111111111fffffffffffffffff11111111111111ccccccccccccccccccccccccccccccccc1111fffffffffffffffff111fffcccccccc111ffffffffffffffffffff
+    fffffffffffffff11111111111111111111111fffffffffffffffff11111111111111cccccccccccccccccccccfffccccccccc1111fffffffffffffffff111fffcccccfff111ffffffffffffffffffff
+    fffffffffffffffff11111111111111111111ffffffffffffffffff11111111111111111111111fff111111111fff11111fff1111ffffffffffffffffff111fff11111fff111ffffffffffffffffffff
+    ffffffffffffffffffffffffffffff1111111fffffffffffffffffff1111111111111111111111fff111111111fff11111fff1111fffffffffffffffffff1111111111fff111ffffffffffffffffffff
+    fffffffffffffffffffffffffffffff111111fffffbbbbbbbbbfffff1111111111111111111111fff11111111111111111fff1111ffffffbbbbbbbbfffff111111111111111fffffffffffffffffffff
+    fffffffffffffbbbbbbbffffffffffffffffffffbbbbbbbbbbbbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffbbbbbbbbbbffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffffffffffffffff
+    ffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffffff
+    fffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffff
+    ffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffff
+    ffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffff
+    fffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    ffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffff
+    fffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffff
+    fffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffff
+    fffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffbbbbbbbbbbbbbffffbbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffff
+    fffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbffffffffffffffffffffffffffffffffffbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffffffffbbbbbbbbbbbbbbbbbbbbfffffffffffffffffff
+    ffffffffffffffffffbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffffffffffffffffffffffffffbbbbbbbbbbbbbbbfffffffffffffffffffffffffffffbbbbbbbbbbbbbbbbffffffffffffffffffff
+    ffffffffffffffffffbbbbbbbbbbbbbbbbbbbbffffffffffffffffffffffffffffffffffffffffffbbbbbbbbbbbbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffbbbbbbbbbbbbbbbbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    fffffffffffffffffffffbbbbbbbbbbbbfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    `, SpriteKind.Van)
+Van.setFlag(SpriteFlag.Ghost, true)
+Door2 = sprites.create(img`
     ffffffffffffffff
     feeeeeeeeeeeeeef
     feffffffffffffef
@@ -2880,8 +2986,8 @@ Door = sprites.create(img`
     feeeeeeeeeeeeeef
     ffffffffffffffff
     `, SpriteKind.Door)
-Door.setPosition(648, 208)
-Car = sprites.create(img`
+Door2.setPosition(648, 208)
+Car2 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . 2 2 2 2 2 2 2 2 2 . . 
     . . . . 2 c 2 2 2 2 2 2 2 4 2 . 
@@ -2899,9 +3005,28 @@ Car = sprites.create(img`
     . . . f f f f . . . . . f f f . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Car)
-Car.setPosition(800, 407)
-scene.cameraFollowSprite(Car)
-Car.setVelocity(-50, 0)
+Car2.setPosition(800, 407)
+scene.cameraFollowSprite(Car2)
+jhonny_in_van = sprites.create(img`
+    . . . . . . . . . . . . . . 
+    . . . . . f f f f . . . . . 
+    . . . f f f f f c f f . . . 
+    . . f f c f f f c f f f . . 
+    . . f c c f f f f c f f . . 
+    . . f c f f e e f f c f . . 
+    . . f f f 4 4 e e f f f . . 
+    . . f f d f 4 4 f d f f . . 
+    . . f 4 1 f 4 4 f 1 4 f . . 
+    . . . 4 4 4 4 4 4 4 4 . . . 
+    . . . . 5 5 5 4 4 4 . . . . 
+    . . e 4 b 2 2 5 5 5 4 e . . 
+    . . 4 d 5 5 2 2 2 2 d 4 . . 
+    . . 4 4 f f 5 5 5 5 4 4 . . 
+    . . . . f f e e f f . . . . 
+    . . . . . . . . . . . . . . 
+    `, SpriteKind.jhonny_in_van)
+jhonny_in_van.setPosition(760, 760)
+Car2.setVelocity(-50, 0)
 Johnny = sprites.create(img`
     . . . . . . . . . . . . . . 
     . . . . . f f f f . . . . . 
@@ -2921,7 +3046,7 @@ Johnny = sprites.create(img`
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
 Johnny.setPosition(760, 760)
-gate = sprites.create(img`
+gate2 = sprites.create(img`
     6 6 6 f 6 6 6 6 6 6 6 6 6 b c b 
     6 6 6 6 6 6 6 6 6 6 6 6 6 b c b 
     6 f 6 6 6 6 6 f 6 6 6 f 6 b c b 
@@ -2939,14 +3064,14 @@ gate = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.B_Story)
-gate.setPosition(648, 344)
+gate2.setPosition(648, 344)
 tiles.setTilemap(tilemap`level1`)
 pause(8075)
-Car.setVelocity(0, 0)
+Car2.setVelocity(0, 0)
 music.pewPew.play()
 pause(1000)
 animation.runImageAnimation(
-Car,
+Car2,
 [img`
     ....................
     .....222222222......
