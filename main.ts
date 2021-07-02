@@ -7,8 +7,16 @@ namespace SpriteKind {
     export const sfumatura = SpriteKind.create()
     export const jhonny_in_van = SpriteKind.create()
     export const Van = SpriteKind.create()
+    export const Wheel = SpriteKind.create()
+    export const Stick = SpriteKind.create()
 }
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.B_Story, function (sprite, otherSprite) {
+    controller.moveSprite(Johnny, 0, 0)
+    gate2.destroy()
+    story.printText("the gate is open", 658, 375, 1, 15, story.TextSpeed.Normal)
+    controller.moveSprite(Johnny, 40, 40)
+})
+controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Johnny,
     [img`
@@ -79,88 +87,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         . . 4 4 6 6 6 6 6 6 4 4 . . 
         . . . . f f f f f f . . . . 
         . . . . f f . . f f . . . . 
-        `],
-    250,
-    true
-    )
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.B_Story, function (sprite, otherSprite) {
-    controller.moveSprite(Johnny, 0, 0)
-    gate2.destroy()
-    story.printText("the gate is open", 658, 375, 1, 15, story.TextSpeed.Normal)
-    controller.moveSprite(Johnny, 40, 40)
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    Johnny,
-    [img`
-        . . . . . f f f f f . . . . 
-        . . . f f f f f f f f f . . 
-        . . f f f c f f f f f f . . 
-        . . f f c f f f c f f f f . 
-        . f c c f f f c c f f c f . 
-        . f f f f 4 f f f f c c f . 
-        . . f f 4 4 f f f f f f f . 
-        . . . . 4 4 f b f f f f f . 
-        . . . . 4 4 f 1 4 f f f . . 
-        . . . . 4 4 4 4 4 f f f . . 
-        . . . . . 4 4 4 4 e . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 6 6 6 6 6 . . . . 
-        . . . . f f f f f f . . . . 
-        . . . . f f . . f f . . . . 
-        `,img`
-        . . . . . f f f f f . . . . 
-        . . . f f f f f f f f f . . 
-        . . f f f c f f f f f f . . 
-        . . f f c f f f c f f f f . 
-        . f c c f f f c c f f c f . 
-        . f f f f 4 f f f f c c f . 
-        . . f f 4 4 f f f f f f f . 
-        . . . . 4 4 f b f f f f f . 
-        . . . . 4 4 f 1 4 f f f . . 
-        . . . . 4 4 4 4 4 f f f . . 
-        . . . . . 4 4 4 4 e . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 6 6 6 6 6 . . . . 
-        . . . . . f f f f f . . . . 
-        . . . . . . f f f . . . . . 
-        `,img`
-        . . . . . f f f f f . . . . 
-        . . . f f f f f f f f f . . 
-        . . f f f c f f f f f f . . 
-        . . f f c f f f c f f f f . 
-        . f c c f f f c c f f c f . 
-        . f f f f 4 f f f f c c f . 
-        . . f f 4 4 f f f f f f f . 
-        . . . . 4 4 f b f f f f f . 
-        . . . . 4 4 f 1 4 f f f . . 
-        . . . . 4 4 4 4 4 f f f . . 
-        . . . . . 4 4 4 4 e . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 6 6 6 6 6 . . . . 
-        . . . . . f f f f f . . . . 
-        . . . . . f f . f f . . . . 
-        `,img`
-        . . . . . f f f f f . . . . 
-        . . . f f f f f f f f f . . 
-        . . f f f c f f f f f f . . 
-        . . f f c f f f c f f f f . 
-        . f c c f f f c c f f c f . 
-        . f f f f 4 f f f f c c f . 
-        . . f f 4 4 f f f f f f f . 
-        . . . . 4 4 f b f f f f f . 
-        . . . . 4 4 f 1 4 f f f . . 
-        . . . . 4 4 4 4 4 f f f . . 
-        . . . . . 4 4 4 4 e . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 2 2 2 4 4 . . . . 
-        . . . . . 6 6 6 6 6 . . . . 
-        . . . . . f f f f f . . . . 
-        . . . . . . f f f . . . . . 
         `],
     250,
     true
@@ -690,13 +616,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSpr
         . . . . . f f f f . . . . . 
         . . . f f b b b b f f . . . 
         . . f b b b b b b b b f . . 
-        . f b b b d b b b b b b f . 
-        . f b b d d d b b b b b f . 
-        . f b b d d d d b b b b f . 
-        . f d b d d d d d d b b f . 
-        . f d d f f d d f f d b f . 
-        . f d d d d d d d d d b f . 
-        . . f d d d b b d d d f . . 
+        . f b b b b b b b b b b f . 
+        . f b b b b b b b b b b f . 
+        . f b b b b b b b b b b f . 
+        . f b b b b b b b b b b f . 
+        . f b b b b b b b b b b f . 
+        . f d d b b b b b b d d f . 
+        . . f d d b b b b d d f . . 
         . . f f d d d d d d f f . . 
         . c d f 1 1 1 1 1 1 f d c . 
         . d 1 f 1 1 1 1 1 1 f 1 d . 
@@ -920,7 +846,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSpr
     pause(4000)
     Il_propietario.follow(Johnny, 200)
 })
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Johnny,
     [img`
@@ -995,8 +921,232 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     250,
     true
     )
+    animation.runImageAnimation(
+    jhonny_in_van,
+    [img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . 5 5 5 4 4 4 . . . . . 
+        . e 4 b 2 2 5 5 5 4 e . . . 
+        . 4 d 5 5 2 2 2 2 d 4 . . . 
+        . 4 4 f f 5 5 5 5 4 4 . . . 
+        . . . f f e e f f . . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . . 5 5 5 4 4 4 . . . 
+        . . . e 4 b 2 2 5 5 5 4 e . 
+        . . . 4 d 5 5 2 2 2 2 d 4 . 
+        . . . 4 4 f f 5 5 5 5 4 4 . 
+        . . . . . f f e e f f . . . 
+        . . . . . . . . . . . . . . 
+        `],
+    200,
+    true
+    )
 })
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    Johnny,
+    [img`
+        . . . . . f f f f f . . . . 
+        . . . f f f f f f f f f . . 
+        . . f f f c f f f f f f . . 
+        . . f f c f f f c f f f f . 
+        . f c c f f f c c f f c f . 
+        . f f f f 4 f f f f c c f . 
+        . . f f 4 4 f f f f f f f . 
+        . . . . 4 4 f b f f f f f . 
+        . . . . 4 4 f 1 4 f f f . . 
+        . . . . 4 4 4 4 4 f f f . . 
+        . . . . . 4 4 4 4 e . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 6 6 6 6 6 . . . . 
+        . . . . f f f f f f . . . . 
+        . . . . f f . . f f . . . . 
+        `,img`
+        . . . . . f f f f f . . . . 
+        . . . f f f f f f f f f . . 
+        . . f f f c f f f f f f . . 
+        . . f f c f f f c f f f f . 
+        . f c c f f f c c f f c f . 
+        . f f f f 4 f f f f c c f . 
+        . . f f 4 4 f f f f f f f . 
+        . . . . 4 4 f b f f f f f . 
+        . . . . 4 4 f 1 4 f f f . . 
+        . . . . 4 4 4 4 4 f f f . . 
+        . . . . . 4 4 4 4 e . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 6 6 6 6 6 . . . . 
+        . . . . . f f f f f . . . . 
+        . . . . . . f f f . . . . . 
+        `,img`
+        . . . . . f f f f f . . . . 
+        . . . f f f f f f f f f . . 
+        . . f f f c f f f f f f . . 
+        . . f f c f f f c f f f f . 
+        . f c c f f f c c f f c f . 
+        . f f f f 4 f f f f c c f . 
+        . . f f 4 4 f f f f f f f . 
+        . . . . 4 4 f b f f f f f . 
+        . . . . 4 4 f 1 4 f f f . . 
+        . . . . 4 4 4 4 4 f f f . . 
+        . . . . . 4 4 4 4 e . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 6 6 6 6 6 . . . . 
+        . . . . . f f f f f . . . . 
+        . . . . . f f . f f . . . . 
+        `,img`
+        . . . . . f f f f f . . . . 
+        . . . f f f f f f f f f . . 
+        . . f f f c f f f f f f . . 
+        . . f f c f f f c f f f f . 
+        . f c c f f f c c f f c f . 
+        . f f f f 4 f f f f c c f . 
+        . . f f 4 4 f f f f f f f . 
+        . . . . 4 4 f b f f f f f . 
+        . . . . 4 4 f 1 4 f f f . . 
+        . . . . 4 4 4 4 4 f f f . . 
+        . . . . . 4 4 4 4 e . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 2 2 2 4 4 . . . . 
+        . . . . . 6 6 6 6 6 . . . . 
+        . . . . . f f f f f . . . . 
+        . . . . . . f f f . . . . . 
+        `],
+    250,
+    true
+    )
+    animation.runImageAnimation(
+    jhonny_in_van,
+    [img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . . 5 5 5 4 4 4 . . . 
+        . . . e 4 b 2 2 5 5 5 4 e . 
+        . . . 4 d 5 5 2 2 2 2 d 4 . 
+        . . . 4 4 f f 5 5 5 5 4 4 . 
+        . . . . . f f e e f f . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . . 5 5 5 4 4 4 . . . . 
+        . . e 4 b 2 2 5 5 5 4 e . . 
+        . . 4 d 5 5 2 2 2 2 d 4 . . 
+        . . 4 4 f f 5 5 5 5 4 4 . . 
+        . . . . f f e e f f . . . . 
+        . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . 
+        . . . f f f f f c f f . . . 
+        . . f f c f f f c f f f . . 
+        . . f c c f f f f c f f . . 
+        . . f f f f e e f f c f . . 
+        . . f f f 4 4 e e f f f . . 
+        . . f f d f 4 4 f d f f . . 
+        . . f 4 1 f 4 4 f 1 4 f . . 
+        . . . 4 4 4 4 4 4 4 4 . . . 
+        . . . 5 5 5 4 4 4 . . . . . 
+        . e 4 b 2 2 5 5 5 4 e . . . 
+        . 4 d 5 5 2 2 2 2 d 4 . . . 
+        . 4 4 f f 5 5 5 5 4 4 . . . 
+        . . . f f e e f f . . . . . 
+        . . . . . . . . . . . . . . 
+        `],
+    200,
+    true
+    )
+})
+controller.player1.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Johnny,
     [img`
@@ -1069,158 +1219,6 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . f f . . f f . . . . 
         `],
     250,
-    true
-    )
-})
-controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    jhonny_in_van,
-    [img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        9 . . f f f f f c f f . . . 
-        . . f f c f f f c f f f 9 . 
-        . . f c c f f f f c f 9 . . 
-        . . f 9 f f e e f f c f . . 
-        . . f f 9 4 4 e e f f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . . 5 5 5 4 4 4 . . . . 
-        . . e 4 b 2 2 5 5 5 4 e . . 
-        . . 4 d 5 5 2 2 2 2 d 4 . . 
-        . . 4 4 f f 5 5 5 5 4 4 . . 
-        . . . . f f e e f f . . . . 
-        . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        . . . f f f f f c f f . . 9 
-        . . f f c f f f c f f f 9 . 
-        . . 9 c c f f f f c f f . . 
-        . . f 9 f f e e f f c f . . 
-        . . f f f 4 4 e e f f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . 5 5 5 4 4 4 . . . . . 
-        . e 4 b 2 2 5 5 5 4 e . . . 
-        . 4 d 5 5 2 2 2 2 d 4 . . . 
-        . 4 4 f f 5 5 5 5 4 4 . . . 
-        . . . f f e e f f . . . . . 
-        . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        . . . f f f f f c f f . . 9 
-        . 9 f f c f f f c f f f . . 
-        . . 9 c c f f f f c f f . . 
-        . . f f f f e e f f 9 f . . 
-        . . f f f 4 4 e e 9 f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . . 5 5 5 4 4 4 . . . . 
-        . . e 4 b 2 2 5 5 5 4 e . . 
-        . . 4 d 5 5 2 2 2 2 d 4 . . 
-        . . 4 4 f f 5 5 5 5 4 4 . . 
-        . . . . f f e e f f . . . . 
-        . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        . . . f f f f f c f f . . . 
-        . 9 f f c f f f c f f f . . 
-        . . 9 c c f f f f c f 9 . . 
-        . . f f f f e e f f 9 f . . 
-        . . f f f 4 4 e e f f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . . . 5 5 5 4 4 4 . . . 
-        . . . e 4 b 2 2 5 5 5 4 e . 
-        . . . 4 d 5 5 2 2 2 2 d 4 . 
-        . . . 4 4 f f 5 5 5 5 4 4 . 
-        . . . . . f f e e f f . . . 
-        . . . . . . . . . . . . . . 
-        `],
-    200,
-    true
-    )
-})
-controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    jhonny_in_van,
-    [img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        9 . . f f f f f c f f . . . 
-        . . f f c f f f c f f f 9 . 
-        . . f c c f f f f c f 9 . . 
-        . . f 9 f f e e f f c f . . 
-        . . f f 9 4 4 e e f f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . . 5 5 5 4 4 4 . . . . 
-        . . e 4 b 2 2 5 5 5 4 e . . 
-        . . 4 d 5 5 2 2 2 2 d 4 . . 
-        . . 4 4 f f 5 5 5 5 4 4 . . 
-        . . . . f f e e f f . . . . 
-        . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        . . . f f f f f c f f . . 9 
-        . . f f c f f f c f f f 9 . 
-        . . 9 c c f f f f c f f . . 
-        . . f 9 f f e e f f c f . . 
-        . . f f f 4 4 e e f f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . 5 5 5 4 4 4 . . . . . 
-        . e 4 b 2 2 5 5 5 4 e . . . 
-        . 4 d 5 5 2 2 2 2 d 4 . . . 
-        . 4 4 f f 5 5 5 5 4 4 . . . 
-        . . . f f e e f f . . . . . 
-        . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        . . . f f f f f c f f . . 9 
-        . 9 f f c f f f c f f f . . 
-        . . 9 c c f f f f c f f . . 
-        . . f f f f e e f f 9 f . . 
-        . . f f f 4 4 e e 9 f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . . 5 5 5 4 4 4 . . . . 
-        . . e 4 b 2 2 5 5 5 4 e . . 
-        . . 4 d 5 5 2 2 2 2 d 4 . . 
-        . . 4 4 f f 5 5 5 5 4 4 . . 
-        . . . . f f e e f f . . . . 
-        . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . 
-        . . . f f f f f c f f . . . 
-        . 9 f f c f f f c f f f . . 
-        . . 9 c c f f f f c f 9 . . 
-        . . f f f f e e f f 9 f . . 
-        . . f f f 4 4 e e f f f . . 
-        . . f f d f 4 4 f d f f . . 
-        . . f 4 1 f 4 4 f 1 4 f . . 
-        . . . 4 4 4 4 4 4 4 4 . . . 
-        . . . . . 5 5 5 4 4 4 . . . 
-        . . . e 4 b 2 2 5 5 5 4 e . 
-        . . . 4 d 5 5 2 2 2 2 d 4 . 
-        . . . 4 4 f f 5 5 5 5 4 4 . 
-        . . . . . f f e e f f . . . 
-        . . . . . . . . . . . . . . 
-        `],
-    200,
     true
     )
 })
@@ -2808,13 +2806,375 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     )
     pause(7000)
     Il_propietario.destroy()
-    Johnny.destroy(effects.trail, 1000)
+    Johnny.destroy()
     tiles.setTilemap(tilemap`level5`)
     scene.setBackgroundColor(11)
-    Van.setFlag(SpriteFlag.Ghost, false)
-    jhonny_in_van.setPosition(96, 56)
-    controller.player1.moveSprite(jhonny_in_van, 0, 5)
+    Van.setFlag(SpriteFlag.Invisible, false)
+    jhonny_in_van.setPosition(96, 60)
+    Ruota_destra = sprites.create(img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `, SpriteKind.Wheel)
+    Ruota_destra.setPosition(115, 90)
+    animation.runImageAnimation(
+    Ruota_destra,
+    [img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . e f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . 6 f f b b b b b b b b b f f f . 
+        . . 6 f f f b b b b b f f f f . . 
+        . . . 6 f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f e f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        6 f b b b c c c f c c c b b b f f 
+        6 f b b b c c f c f c c b b b f f 
+        6 f b b b c c c f c c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . 6 f f f f f f f f f f . . . 
+        . . 6 f f f b b b b b f f f e . . 
+        . 6 f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f 6 6 6 f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c c f c c c b b b f f 
+        f f b b b c c f c f c c b b b f e 
+        f f b b b c c c f c c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f 6 . . . 
+        . . f f f f b b b b b f f f 6 . . 
+        . f f f b b b b b b b b b f f 6 . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f e . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c c f c c c b b b f 6 
+        f f b b b c c f c f c c b b b f 6 
+        f f b b b c c c f c c c b b b f 6 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f e f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f 6 . 
+        . . e f f f b b b b b f f f 6 . . 
+        . . . f f f f f f f f f f 6 . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c c f c c c b b b f f 
+        e f b b b c c f c f c c b b b f f 
+        f f b b b c c c f c c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f 6 6 6 f f f . . . . 
+        `],
+    100,
+    true
+    )
+    controller.player1.moveSprite(jhonny_in_van, 5, 0)
+    Ruota_sinistra = sprites.create(img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `, SpriteKind.Wheel)
+    Ruota_sinistra.setPosition(45, 90)
+    animation.runImageAnimation(
+    Ruota_sinistra,
+    [img`
+        . . . . f f f 6 6 6 f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c c f c c c b b b f f 
+        f f b b b c c f c f c c b b b f e 
+        f f b b b c c c f c c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f 6 . . . 
+        . . f f f f b b b b b f f f 6 . . 
+        . f f f b b b b b b b b b f f 6 . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f e . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c c f c c c b b b f 6 
+        f f b b b c c f c f c c b b b f 6 
+        f f b b b c c c f c c c b b b f 6 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f e f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f 6 . 
+        . . e f f f b b b b b f f f 6 . . 
+        . . . f f f f f f f f f f 6 . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c c f c c c b b b f f 
+        e f b b b c c f c f c c b b b f f 
+        f f b b b c c c f c c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f 6 6 6 f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . e f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . 6 f f b b b b b b b b b f f f . 
+        . . 6 f f f b b b b b f f f f . . 
+        . . . 6 f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f e f f f f . . . . 
+        . . . f f f f f f f f f f f . . . 
+        . . f f f f b b b b b f f f f . . 
+        . f f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        6 f b b b c c c f c c c b b b f f 
+        6 f b b b c c f c f c c b b b f f 
+        6 f b b b c c c f c c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `,img`
+        . . . . f f f f f f f f f . . . . 
+        . . . 6 f f f f f f f f f f . . . 
+        . . 6 f f f b b b b b f f f e . . 
+        . 6 f f b b b b b b b b b f f f . 
+        f f f b b b b b b b b b b b f f f 
+        f f f b b b c c c c c b b b f f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f b b b c c f c f c c b b b f f 
+        f f b b b c c c c c c c b b b f f 
+        f f f b b b c c c c c b b b f f f 
+        f f f b b b b b b b b b b b f f f 
+        . f f f b b b b b b b b b f f f . 
+        . . f f f f b b b b b f f f f . . 
+        . . . f f f f f f f f f f f . . . 
+        . . . . f f f f f f f f f . . . . 
+        `],
+    100,
+    true
+    )
+    Stick = sprites.create(img`
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . . . b b . . . . . . . 
+        . . . . . . . b b . . . . . . . 
+        `, SpriteKind.Stick)
+    Stick.setPosition(128, 60)
 })
+let Stick: Sprite = null
+let Ruota_sinistra: Sprite = null
+let Ruota_destra: Sprite = null
 let Il_propietario: Sprite = null
 let sfuma: Sprite = null
 let gate2: Sprite = null
@@ -2951,7 +3311,7 @@ Van = sprites.create(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `, SpriteKind.Van)
-Van.setFlag(SpriteFlag.Ghost, true)
+Van.setFlag(SpriteFlag.Invisible, true)
 Door2 = sprites.create(img`
     ffffffffffffffff
     feeeeeeeeeeeeeef
