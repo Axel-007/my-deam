@@ -9,11 +9,18 @@ namespace SpriteKind {
     export const Van = SpriteKind.create()
     export const Wheel = SpriteKind.create()
     export const Stick = SpriteKind.create()
+    export const Mouse = SpriteKind.create()
+    export const pLAY = SpriteKind.create()
+    export const no_play = SpriteKind.create()
+    export const one = SpriteKind.create()
+    export const zero = SpriteKind.create()
+    export const dot = SpriteKind.create()
+    export const play_in_play = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.B_Story, function (sprite, otherSprite) {
     controller.moveSprite(Johnny, 0, 0)
     gate2.destroy()
-    story.printText("the gate is open", 658, 375, 1, 15, story.TextSpeed.Normal)
+    story.printText("the gate is open", 665, 375, 1, 15, story.TextSpeed.Normal)
     controller.moveSprite(Johnny, 40, 40)
 })
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
@@ -220,6 +227,127 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSpr
     animation.runImageAnimation(
     sfuma,
     [img`
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
+        `,img`
         fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff.
         fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff.
         fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff...fff.
@@ -462,127 +590,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSpr
         f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.
         .f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f.f
         `,img`
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        .....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff.....fffff
-        `,img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -752,7 +759,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSpr
         . . . . f f . . f f . . . . 
         `, SpriteKind.Enemy)
     Il_propietario.setPosition(64, 80)
-    story.printText("Hi could you help me? My car stopped in the road", 96, 128, 1, 15, story.TextSpeed.Normal)
+    story.printText("Hi could you help me? My car stopped in the road", 90, 128, 1, 15, story.TextSpeed.Normal)
     pause(100)
     animation.runImageAnimation(
     Il_propietario,
@@ -967,6 +974,613 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSpr
     pause(4000)
     Il_propietario.follow(Johnny, 200)
 })
+sprites.onOverlap(SpriteKind.Mouse, SpriteKind.pLAY, function (sprite, otherSprite) {
+    time.setVelocity(0, -25)
+    animation.runImageAnimation(
+    play_,
+    [img`
+        11111111111111111111111111111111
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1fffffffff11ff1ffffffffffffffff1
+        1fffffffff1f1f1ffffffffffffffff1
+        1fffffffff11ff1ff1ff1f1ffffffff1
+        1fffffffff1fff1f1f1ff1fffffffff1
+        1fffffffff1fff1ff11ff1fffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        17ffffffff11ff1ffffffffffffffff1
+        17ffffffff1f1f1ffffffffffffffff1
+        17ffffffff11ff1ff1ff1f1ffffffff1
+        17ffffffff1fff1f1f1ff1fffffffff1
+        17ffffffff1fff1ff11ff1fffffffff1
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        17fffffffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        177fffffff11ff1ffffffffffffffff1
+        177fffffff1f1f1ffffffffffffffff1
+        177fffffff11ff1ff1ff1f1ffffffff1
+        177fffffff1fff1f1f1ff1fffffffff1
+        177fffffff1fff1ff11ff1fffffffff1
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        177ffffffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777ffffff11ff1ffffffffffffffff1
+        1777ffffff1f1f1ffffffffffffffff1
+        1777ffffff11ff1ff1ff1f1ffffffff1
+        1777ffffff1fff1f1f1ff1fffffffff1
+        1777ffffff1fff1ff11ff1fffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        1777fffffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777fffff11ff1ffffffffffffffff1
+        17777fffff1f1f1ffffffffffffffff1
+        17777fffff11ff1ff1ff1f1ffffffff1
+        17777fffff1fff1f1f1ff1fffffffff1
+        17777fffff1fff1ff11ff1fffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        17777ffffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        177777ffff11ff1ffffffffffffffff1
+        177777ffff1f1f1ffffffffffffffff1
+        177777ffff11ff1ff1ff1f1ffffffff1
+        177777ffff1fff1f1f1ff1fffffffff1
+        177777ffff1fff1ff11ff1fffffffff1
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        177777fffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777fff11ff1ffffffffffffffff1
+        1777777fff1f1f1ffffffffffffffff1
+        1777777fff11ff1ff1ff1f1ffffffff1
+        1777777fff1fff1f1f1ff1fffffffff1
+        1777777fff1fff1ff11ff1fffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        1777777ffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777ff11ff1ffffffffffffffff1
+        17777777ff1f1f1ffffffffffffffff1
+        17777777ff11ff1ff1ff1f1ffffffff1
+        17777777ff1fff1f1f1ff1fffffffff1
+        17777777ff1fff1ff11ff1fffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        17777777fffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777f11ff1ffffffffffffffff1
+        177777777f1f1f1ffffffffffffffff1
+        177777777f11ff1ff1ff1f1ffffffff1
+        177777777f1fff1f1f1ff1fffffffff1
+        177777777f1fff1ff11ff1fffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        177777777ffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        177777777711ff1ffffffffffffffff1
+        17777777771f1f1ffffffffffffffff1
+        177777777711ff1ff1ff1f1ffffffff1
+        17777777771fff1f1f1ff1fffffffff1
+        17777777771fff1ff11ff1fffffffff1
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        1777777777fffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        177777777711ff1ffffffffffffffff1
+        17777777771f1f1ffffffffffffffff1
+        177777777711ff1ff1ff1f1ffffffff1
+        17777777771fff1f1f1ff1fffffffff1
+        17777777771fff1ff11ff1fffffffff1
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        17777777777ffffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        177777777711ff1ffffffffffffffff1
+        1777777777171f1ffffffffffffffff1
+        177777777711ff1ff1ff1f1ffffffff1
+        177777777717ff1f1f1ff1fffffffff1
+        177777777717ff1ff11ff1fffffffff1
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        177777777777fffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777117f1ffffffffffffffff1
+        1777777777171f1ffffffffffffffff1
+        1777777777117f1ff1ff1f1ffffffff1
+        1777777777177f1f1f1ff1fffffffff1
+        1777777777177f1ff11ff1fffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        1777777777777ffffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        177777777711771ffffffffffffffff1
+        177777777717171ffffffffffffffff1
+        177777777711771ff1ff1f1ffffffff1
+        177777777717771f1f1ff1fffffffff1
+        177777777717771ff11ff1fffffffff1
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        17777777777777fffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        177777777711771ffffffffffffffff1
+        177777777717171ffffffffffffffff1
+        177777777711771ff1ff1f1ffffffff1
+        177777777717771f1f1ff1fffffffff1
+        177777777717771ff11ff1fffffffff1
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        177777777777777ffffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        17777777771177177ffffffffffffff1
+        17777777771717177ffffffffffffff1
+        177777777711771771ff1f1ffffffff1
+        17777777771777171f1ff1fffffffff1
+        1777777777177717711ff1fffffffff1
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        17777777777777777ffffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        177777777711771777fffffffffffff1
+        177777777717171777fffffffffffff1
+        177777777711771771ff1f1ffffffff1
+        1777777777177717171ff1fffffffff1
+        1777777777177717711ff1fffffffff1
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        177777777777777777fffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777117717777ffffffffffff1
+        1777777777171717777ffffffffffff1
+        1777777777117717717f1f1ffffffff1
+        1777777777177717171ff1fffffffff1
+        1777777777177717711ff1fffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        1777777777777777777ffffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        17777777771177177777fffffffffff1
+        17777777771717177777fffffffffff1
+        177777777711771771771f1ffffffff1
+        17777777771777171717f1fffffffff1
+        17777777771777177117f1fffffffff1
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        17777777777777777777fffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        177777777711771777777ffffffffff1
+        177777777717171777777ffffffffff1
+        177777777711771771771f1ffffffff1
+        1777777777177717171771fffffffff1
+        1777777777177717711771fffffffff1
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        177777777777777777777ffffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777117717777777fffffffff1
+        1777777777171717777777fffffffff1
+        17777777771177177177171ffffffff1
+        1777777777177717171771fffffffff1
+        1777777777177717711771fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        1777777777777777777777fffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        17777777771177177777777ffffffff1
+        17777777771717177777777ffffffff1
+        17777777771177177177171ffffffff1
+        17777777771777171717717ffffffff1
+        17777777771777177117717ffffffff1
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        17777777777777777777777ffffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        177777777711771777777777fffffff1
+        177777777717171777777777fffffff1
+        177777777711771771771717fffffff1
+        177777777717771717177177fffffff1
+        177777777717771771177177fffffff1
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        177777777777777777777777fffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777117717777777777ffffff1
+        1777777777171717777777777ffffff1
+        1777777777117717717717177ffffff1
+        1777777777177717171771777ffffff1
+        1777777777177717711771777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        1777777777777777777777777ffffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        17777777771177177777777777fffff1
+        17777777771717177777777777fffff1
+        17777777771177177177171777fffff1
+        17777777771777171717717777fffff1
+        17777777771777177117717777fffff1
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        17777777777777777777777777fffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        177777777711771777777777777ffff1
+        177777777717171777777777777ffff1
+        177777777711771771771717777ffff1
+        177777777717771717177177777ffff1
+        177777777717771771177177777ffff1
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        177777777777777777777777777ffff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        1777777777117717777777777777fff1
+        1777777777171717777777777777fff1
+        1777777777117717717717177777fff1
+        1777777777177717171771777777fff1
+        1777777777177717711771777777fff1
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        1777777777777777777777777777fff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        17777777771177177777777777777ff1
+        17777777771717177777777777777ff1
+        17777777771177177177171777777ff1
+        17777777771777171717717777777ff1
+        17777777771777177117717777777ff1
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        17777777777777777777777777777ff1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        177777777711771777777777777777f1
+        177777777717171777777777777777f1
+        177777777711771771771717777777f1
+        177777777717771717177177777777f1
+        177777777717771771177177777777f1
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        177777777777777777777777777777f1
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777771177177777777777777771
+        17777777771717177777777777777771
+        17777777771177177177171777777771
+        17777777771777171717717777777771
+        17777777771777177117717777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777771177177777777777777771
+        17777777771717177777777777777771
+        17777777771177177177171777777771
+        17777777771777171717717777777771
+        17777777771777177117717777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777771177177777777777777771
+        17777777771717177777777777777771
+        17777777771177177177171777777771
+        17777777771777171717717777777771
+        17777777771777177117717777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777771177177777777777777771
+        17777777771717177777777777777771
+        17777777771177177177171777777771
+        17777777771777171717717777777771
+        17777777771777177117717777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777771177177777777777777771
+        17777777771717177777777777777771
+        17777777771177177177171777777771
+        17777777771777171717717777777771
+        17777777771777177117717777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        11111111111111111111111111111111
+        `,img`
+        11111111111111111111111111111111
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777771177177777777777777771
+        17777777771717177777777777777771
+        17777777771177177177171777777771
+        17777777771777171717717777777771
+        17777777771777177117717777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        17777777777777777777777777777771
+        11111111111111111111111111111111
+        `],
+    100,
+    false
+    )
+    Mouse_.setPosition(0, 0)
+    Mouse_.setPosition(400, 392)
+    pause(3501)
+})
 controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Johnny,
@@ -1043,7 +1657,7 @@ controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.P
     true
     )
     animation.runImageAnimation(
-    jhonny_in_van,
+    jhonny_in_van2,
     [img`
         . . . . . . . . . . . . . . 
         . . . . . f f f f . . . . . 
@@ -1121,12 +1735,12 @@ sprites.onOverlap(SpriteKind.jhonny_in_van, SpriteKind.Stick, function (sprite, 
     tiles.setWallAt(tiles.getTileLocation(8, 3), false)
     tiles.setWallAt(tiles.getTileLocation(8, 4), false)
     music.pewPew.play()
-    Stick.destroy()
+    Stick2.destroy()
     Ruota_destra.destroy()
     Ruota_sinistra.destroy()
-    jhonny_in_van.destroy()
+    jhonny_in_van2.destroy()
     animation.runImageAnimation(
-    Van,
+    Van2,
     [img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -2706,6 +3320,134 @@ sprites.onOverlap(SpriteKind.jhonny_in_van, SpriteKind.Stick, function (sprite, 
     )
     pause(10000)
 })
+sprites.onOverlap(SpriteKind.Mouse, SpriteKind.no_play, function (sprite, otherSprite) {
+    time.setVelocity(0, 0)
+    time.setPosition(350, 439)
+    animation.runImageAnimation(
+    play_,
+    [img`
+        11111111111111111111111111111111
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1fffffffff11ff1ffffffffffffffff1
+        1fffffffff1f1f1ffffffffffffffff1
+        1fffffffff11ff1ff1ff1f1ffffffff1
+        1fffffffff1fff1f1f1ff1fffffffff1
+        1fffffffff1fff1ff11ff1fffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        1ffffffffffffffffffffffffffffff1
+        11111111111111111111111111111111
+        `],
+    100,
+    false
+    )
+})
+sprites.onOverlap(SpriteKind.one, SpriteKind.zero, function (sprite, otherSprite) {
+    effects.bubbles.endScreenEffect()
+    Mouse_.destroy()
+    no_play.destroy()
+    play_.destroy()
+    time.destroy()
+    no_time.destroy()
+    tiles.setTilemap(tilemap`level1`)
+    music.setVolume(60)
+    story.startCutscene(function () {
+        for (let index = 0; index < 10; index++) {
+            music.playMelody("C D C D C D C D ", 600)
+        }
+    })
+    Car2.setVelocity(-50, 0)
+    scene.cameraFollowSprite(Car2)
+    pause(8040)
+    Car2.setVelocity(0, 0)
+    music.pewPew.play()
+    pause(1000)
+    animation.runImageAnimation(
+    Car2,
+    [img`
+        ....................
+        .....222222222......
+        ....2c222222242.....
+        ...2cc22222224c2....
+        .d24cc24444444cc....
+        d224cbeeeeeeee2c..d.
+        2224beebbbeebbe2.d..
+        22222ebbbbeebbbe..d.
+        2222e22222ee222e.d..
+        2dd2efeeefeeeeee.d..
+        dd2eeefeefeeeeeed...
+        eeeeeeefffeeeeee....
+        eeeefffeeeeeffff....
+        ..efffffeeefffff....
+        ...ffff.....fff.....
+        ....................
+        `,img`
+        ....................
+        .....222222222......
+        ....2c222222242.....
+        ...2cc22222224c2....
+        .d24cc24444444cc....
+        d224cbeeeeeeee2c..d.
+        2224beebbbeebbe2.d..
+        22222ebbbbeebbbe..d.
+        2222e22222ee222e..d.
+        2dd2efeeefeeeeee.d..
+        dd2eeefeefeeeeeed...
+        eeeeeeefffeeeeee....
+        eeeefffeeeeeffff....
+        ..efffffeeefffff....
+        ...ffff.....fff.....
+        ....................
+        `,img`
+        ....................
+        .....222222222......
+        ....2c222222242.....
+        ...2cc22222224c2....
+        .d24cc24444444cc..d.
+        d224cbeeeeeeee2c.d..
+        2224beebbbeebbe2..d.
+        22222ebbbbeebbbe..d.
+        2222e22222ee222e..d.
+        2dd2efeeefeeeeee.dd.
+        dd2eeefeefeeeeeed...
+        eeeeeeefffeeeeee....
+        eeeefffeeeeeffff....
+        ..efffffeeefffff....
+        ...ffff.....fff.....
+        ....................
+        `,img`
+        ....................
+        .....222222222......
+        ....2c222222242.....
+        ...2cc22222224c2....
+        .d24cc24444444cc...d
+        d224cbeeeeeeee2c.dd.
+        2224beebbbeebbe2..d.
+        22222ebbbbeebbbe.dd.
+        2222e22222ee222e....
+        2dd2efeeefeeeeee.d..
+        dd2eeefeefeeeeeed...
+        eeeeeeefffeeeeee....
+        eeeefffeeeeeffff....
+        ..efffffeeefffff....
+        ...ffff.....fff.....
+        ....................
+        `],
+    50,
+    true
+    )
+    pause(1000)
+    Johnny.setPosition(395, 407)
+    scene.cameraFollowSprite(Johnny)
+    story.printText("Argh! I hate this scrap, and now where am I?", 425, 450, 1, 15, story.TextSpeed.Slow)
+    controller.moveSprite(Johnny, 40, 40)
+    tiles.setWallAt(tiles.getTileLocation(25, 25), true)
+})
 controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Johnny,
@@ -2782,7 +3524,7 @@ controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pr
     true
     )
     animation.runImageAnimation(
-    jhonny_in_van,
+    jhonny_in_van2,
     [img`
         . . . . . . . . . . . . . . 
         . . . . . f f f f . . . . . 
@@ -4519,8 +5261,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     Johnny.destroy()
     tiles.setTilemap(tilemap`level5`)
     scene.setBackgroundColor(11)
-    Van.setFlag(SpriteFlag.Invisible, false)
-    jhonny_in_van.setPosition(96, 60)
+    Van2.setFlag(SpriteFlag.Invisible, false)
+    jhonny_in_van2.setPosition(96, 60)
     Ruota_destra = sprites.create(img`
         . . . . f f f f f f f f f . . . . 
         . . . f f f f f f f f f f f . . . 
@@ -4691,7 +5433,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     100,
     true
     )
-    controller.player1.moveSprite(jhonny_in_van, 5, 0)
+    controller.player1.moveSprite(jhonny_in_van2, 5, 0)
     Ruota_sinistra = sprites.create(img`
         . . . . f f f f f f f f f . . . . 
         . . . f f f f f f f f f f f . . . 
@@ -4862,7 +5604,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     100,
     true
     )
-    Stick = sprites.create(img`
+    Stick2 = sprites.create(img`
         . . . . . . . c c . . . . . . . 
         . . . . . . . c c . . . . . . . 
         . . . . . . . c c . . . . . . . 
@@ -4880,26 +5622,102 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
         . . . . . . . b b . . . . . . . 
         . . . . . . . b b . . . . . . . 
         `, SpriteKind.Stick)
-    Stick.setPosition(130, 60)
+    Stick2.setPosition(130, 60)
 })
 let Ruota_sinistra: Sprite = null
 let Ruota_destra: Sprite = null
-let Stick: Sprite = null
+let Stick2: Sprite = null
 let Il_propietario: Sprite = null
 let sfuma: Sprite = null
-let gate2: Sprite = null
-let Johnny: Sprite = null
-let jhonny_in_van: Sprite = null
 let Car2: Sprite = null
 let Door2: Sprite = null
-let Van: Sprite = null
-music.setVolume(60)
-story.startCutscene(function () {
-    for (let index = 0; index < 10; index++) {
-        music.playMelody("C D C D C D C D ", 600)
-    }
-})
-Van = sprites.create(img`
+let gate2: Sprite = null
+let Johnny: Sprite = null
+let jhonny_in_van2: Sprite = null
+let Mouse_: Sprite = null
+let play_: Sprite = null
+let no_play: Sprite = null
+let Van2: Sprite = null
+let no_time: Sprite = null
+let time: Sprite = null
+game.setDialogFrame(img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `)
+game.setDialogCursor(img`
+    f f f f 1 1 1 1 1 1 1 1 1 f f f f 
+    f f f 1 f f f f f f f f f 1 f f f 
+    f f 1 f f f f f f f f f f f 1 f f 
+    f 1 f f f f f f f f f f f f f 1 f 
+    1 f f f f f f f f f f f f f f f 1 
+    1 f f f f f f f f f f f f f f f 1 
+    1 f f f f f 1 1 1 1 f f f f f f 1 
+    1 f f f f f 1 f f 1 f f f f f f 1 
+    1 f f f f f 1 f f 1 f f f f f f 1 
+    1 f f f f f 1 1 1 1 f f f f f f 1 
+    1 f f f f f 1 f f 1 f f f f f f 1 
+    1 f f f f f 1 f f 1 f f f f f f 1 
+    1 f f f f f f f f f f f f f f f 1 
+    f 1 f f f f f f f f f f f f f 1 f 
+    f f 1 f f f f f f f f f f f 1 f f 
+    f f f 1 f f f f f f f f f 1 f f f 
+    f f f f 1 1 1 1 1 1 1 1 1 f f f f 
+    `)
+effects.bubbles.startScreenEffect()
+time = sprites.create(img`
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    `, SpriteKind.one)
+time.setPosition(350, 439)
+time.setStayInScreen(false)
+no_time = sprites.create(img`
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    `, SpriteKind.zero)
+no_time.setPosition(350, 345)
+no_time.setStayInScreen(false)
+Van2 = sprites.create(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -5021,7 +5839,134 @@ Van = sprites.create(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `, SpriteKind.Van)
-Van.setFlag(SpriteFlag.Invisible, true)
+Van2.setFlag(SpriteFlag.Invisible, true)
+tiles.setTilemap(tilemap`level6`)
+no_play = sprites.create(img`
+    ffffffffffffffffffffffffffffffffff
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    f................................f
+    ffffffffffffffffffffffffffffffffff
+    `, SpriteKind.no_play)
+no_play.setPosition(400, 392)
+play_ = sprites.create(img`
+    11111111111111111111111111111111
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1fffffffff11ff1ffffffffffffffff1
+    1fffffffff1f1f1ffffffffffffffff1
+    1fffffffff11ff1ff1ff1f1ffffffff1
+    1fffffffff1fff1f1f1ff1fffffffff1
+    1fffffffff1fff1ff11ff1fffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    1ffffffffffffffffffffffffffffff1
+    11111111111111111111111111111111
+    `, SpriteKind.pLAY)
+play_.setPosition(400, 392)
+Mouse_ = sprites.create(img`
+    . . 2 . . 
+    . 2 2 2 . 
+    2 2 2 2 2 
+    . 2 2 2 . 
+    . . 2 . . 
+    `, SpriteKind.Mouse)
+animation.runImageAnimation(
+Mouse_,
+[img`
+    . . 2 . . 
+    . 2 2 2 . 
+    2 2 2 2 2 
+    . 2 2 2 . 
+    . . 2 . . 
+    `,img`
+    . . 2 . . 
+    . 2 2 2 . 
+    2 2 5 2 2 
+    . 2 2 2 . 
+    . . 2 . . 
+    `],
+200,
+true
+)
+Mouse_.setPosition(400, 439)
+scene.centerCameraAt(400, 392)
+Mouse_.setStayInScreen(true)
+controller.moveSprite(Mouse_, 20, 20)
+jhonny_in_van2 = sprites.create(img`
+    . . . . . . . . . . . . . . 
+    . . . . . f f f f . . . . . 
+    . . . f f f f f c f f . . . 
+    . . f f c f f f c f f f . . 
+    . . f c c f f f f c f f . . 
+    . . f c f f e e f f c f . . 
+    . . f f f 4 4 e e f f f . . 
+    . . f f d f 4 4 f d f f . . 
+    . . f 4 1 f 4 4 f 1 4 f . . 
+    . . . 4 4 4 4 4 4 4 4 . . . 
+    . . . . 5 5 5 4 4 4 . . . . 
+    . . e 4 b 2 2 5 5 5 4 e . . 
+    . . 4 d 5 5 2 2 2 2 d 4 . . 
+    . . 4 4 f f 5 5 5 5 4 4 . . 
+    . . . . f f e e f f . . . . 
+    . . . . . . . . . . . . . . 
+    `, SpriteKind.jhonny_in_van)
+jhonny_in_van2.setPosition(760, 760)
+Johnny = sprites.create(img`
+    . . . . . . . . . . . . . . 
+    . . . . . f f f f . . . . . 
+    . . . f f f f f c f f . . . 
+    . . f f c f f f c f f f . . 
+    . . f c c f f f f c f f . . 
+    . . f c f f e e f f c f . . 
+    . . f f f 4 4 e e f f f . . 
+    . . f f d f 4 4 f d f f . . 
+    . . f 4 1 f 4 4 f 1 4 f . . 
+    . . . 4 4 4 4 4 4 4 4 . . . 
+    . . . . 4 4 4 4 4 4 . . . . 
+    . . e 4 b 2 2 2 2 b 4 e . . 
+    . . 4 d 2 2 2 2 2 2 d 4 . . 
+    . . 4 4 6 6 6 6 6 6 4 4 . . 
+    . . . . f f f f f f . . . . 
+    . . . . f f . . f f . . . . 
+    `, SpriteKind.Player)
+Johnny.setPosition(760, 760)
+gate2 = sprites.create(img`
+    6 6 6 f 6 6 6 6 6 6 6 6 6 b c b 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 b c b 
+    6 f 6 6 6 6 6 f 6 6 6 f 6 b c b 
+    6 6 6 6 6 6 6 f 6 f f 6 6 b c b 
+    6 6 6 6 6 6 6 6 f f 6 6 6 b c b 
+    6 6 6 f 6 6 6 6 6 6 6 6 6 b b b 
+    6 6 6 6 6 6 6 6 6 6 6 6 f b c b 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.B_Story)
+gate2.setPosition(648, 344)
 Door2 = sprites.create(img`
     ffffffffffffffff
     feeeeeeeeeeeeeef
@@ -5076,147 +6021,3 @@ Car2 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Car)
 Car2.setPosition(800, 407)
-scene.cameraFollowSprite(Car2)
-jhonny_in_van = sprites.create(img`
-    . . . . . . . . . . . . . . 
-    . . . . . f f f f . . . . . 
-    . . . f f f f f c f f . . . 
-    . . f f c f f f c f f f . . 
-    . . f c c f f f f c f f . . 
-    . . f c f f e e f f c f . . 
-    . . f f f 4 4 e e f f f . . 
-    . . f f d f 4 4 f d f f . . 
-    . . f 4 1 f 4 4 f 1 4 f . . 
-    . . . 4 4 4 4 4 4 4 4 . . . 
-    . . . . 5 5 5 4 4 4 . . . . 
-    . . e 4 b 2 2 5 5 5 4 e . . 
-    . . 4 d 5 5 2 2 2 2 d 4 . . 
-    . . 4 4 f f 5 5 5 5 4 4 . . 
-    . . . . f f e e f f . . . . 
-    . . . . . . . . . . . . . . 
-    `, SpriteKind.jhonny_in_van)
-jhonny_in_van.setPosition(760, 760)
-Car2.setVelocity(-50, 0)
-Johnny = sprites.create(img`
-    . . . . . . . . . . . . . . 
-    . . . . . f f f f . . . . . 
-    . . . f f f f f c f f . . . 
-    . . f f c f f f c f f f . . 
-    . . f c c f f f f c f f . . 
-    . . f c f f e e f f c f . . 
-    . . f f f 4 4 e e f f f . . 
-    . . f f d f 4 4 f d f f . . 
-    . . f 4 1 f 4 4 f 1 4 f . . 
-    . . . 4 4 4 4 4 4 4 4 . . . 
-    . . . . 4 4 4 4 4 4 . . . . 
-    . . e 4 b 2 2 2 2 b 4 e . . 
-    . . 4 d 2 2 2 2 2 2 d 4 . . 
-    . . 4 4 6 6 6 6 6 6 4 4 . . 
-    . . . . f f f f f f . . . . 
-    . . . . f f . . f f . . . . 
-    `, SpriteKind.Player)
-Johnny.setPosition(760, 760)
-gate2 = sprites.create(img`
-    6 6 6 f 6 6 6 6 6 6 6 6 6 b c b 
-    6 6 6 6 6 6 6 6 6 6 6 6 6 b c b 
-    6 f 6 6 6 6 6 f 6 6 6 f 6 b c b 
-    6 6 6 6 6 6 6 f 6 f f 6 6 b c b 
-    6 6 6 6 6 6 6 6 f f 6 6 6 b c b 
-    6 6 6 f 6 6 6 6 6 6 6 6 6 b b b 
-    6 6 6 6 6 6 6 6 6 6 6 6 f b c b 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.B_Story)
-gate2.setPosition(648, 344)
-tiles.setTilemap(tilemap`level1`)
-pause(8075)
-Car2.setVelocity(0, 0)
-music.pewPew.play()
-pause(1000)
-animation.runImageAnimation(
-Car2,
-[img`
-    ....................
-    .....222222222......
-    ....2c222222242.....
-    ...2cc22222224c2....
-    .d24cc24444444cc....
-    d224cbeeeeeeee2c..d.
-    2224beebbbeebbe2.d..
-    22222ebbbbeebbbe..d.
-    2222e22222ee222e.d..
-    2dd2efeeefeeeeee.d..
-    dd2eeefeefeeeeeed...
-    eeeeeeefffeeeeee....
-    eeeefffeeeeeffff....
-    ..efffffeeefffff....
-    ...ffff.....fff.....
-    ....................
-    `,img`
-    ....................
-    .....222222222......
-    ....2c222222242.....
-    ...2cc22222224c2....
-    .d24cc24444444cc....
-    d224cbeeeeeeee2c..d.
-    2224beebbbeebbe2.d..
-    22222ebbbbeebbbe..d.
-    2222e22222ee222e..d.
-    2dd2efeeefeeeeee.d..
-    dd2eeefeefeeeeeed...
-    eeeeeeefffeeeeee....
-    eeeefffeeeeeffff....
-    ..efffffeeefffff....
-    ...ffff.....fff.....
-    ....................
-    `,img`
-    ....................
-    .....222222222......
-    ....2c222222242.....
-    ...2cc22222224c2....
-    .d24cc24444444cc..d.
-    d224cbeeeeeeee2c.d..
-    2224beebbbeebbe2..d.
-    22222ebbbbeebbbe..d.
-    2222e22222ee222e..d.
-    2dd2efeeefeeeeee.dd.
-    dd2eeefeefeeeeeed...
-    eeeeeeefffeeeeee....
-    eeeefffeeeeeffff....
-    ..efffffeeefffff....
-    ...ffff.....fff.....
-    ....................
-    `,img`
-    ....................
-    .....222222222......
-    ....2c222222242.....
-    ...2cc22222224c2....
-    .d24cc24444444cc...d
-    d224cbeeeeeeee2c.dd.
-    2224beebbbeebbe2..d.
-    22222ebbbbeebbbe.dd.
-    2222e22222ee222e....
-    2dd2efeeefeeeeee.d..
-    dd2eeefeefeeeeeed...
-    eeeeeeefffeeeeee....
-    eeeefffeeeeeffff....
-    ..efffffeeefffff....
-    ...ffff.....fff.....
-    ....................
-    `],
-50,
-true
-)
-pause(1000)
-Johnny.setPosition(395, 407)
-scene.cameraFollowSprite(Johnny)
-story.printText("Argh! I hate this scrap, and now where am I?", 425, 450, 1, 15, story.TextSpeed.Slow)
-controller.moveSprite(Johnny, 40, 40)
-tiles.setWallAt(tiles.getTileLocation(25, 25), true)
