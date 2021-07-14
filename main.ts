@@ -5909,6 +5909,7 @@ true
 Mouse_.setPosition(400, 439)
 scene.centerCameraAt(400, 392)
 Mouse_.setStayInScreen(true)
+story.printText("Use the red cursor to click plaY", 400, 345, 1, 15)
 controller.moveSprite(Mouse_, 20, 20)
 jhonny_in_van2 = sprites.create(img`
     . . . . . . . . . . . . . . 
