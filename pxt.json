@@ -5,7 +5,10 @@
         "device": "*",
         "animation": "*",
         "storyboard": "*",
-        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1"
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1",
+        "arcade-background-scroll": "github:microsoft/arcade-background-scroll#ef27275c570030c09dd1b9e0db2f63a8844b0848",
+        "Sprite Grid": "github:microsoft/arcade-grid#v1.3.0",
+        "light": "*"
     },
     "files": [
         "main.blocks",
